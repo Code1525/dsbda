@@ -1,0 +1,61 @@
+> pip install pandas
+
+> import pandas as pd
+df = pd.read_csv("C:/Users/Shree/Documents/VAISH/dataset_Facebook.csv",sep = ';')
+print(df)
+
+> df
+
+> print(df.columns)
+
+> df['Type']
+
+> df[['Type', 'Category']]
+
+> df_subset = df[['Type','Category']]
+  df_subset
+
+> df.loc[10:20]
+
+> df.loc[1:7,['like','share']]
+
+> df.sort_values(by="like",ascending= False)
+
+> df.sort_values(by="like",ascending = False, kind = "mergesort")
+
+> df.sort_values(by=["like","share"])
+
+> result=df.transpose()
+ result
+
+> a= df.iloc[:,:4]
+
+> a.reset_index(inplace= True)
+
+> a
+
+> b =df.iloc[:,-4:]
+
+> b.reset_index(inplace=True)
+
+> b
+
+> df_concat= pd.concat([a,b], axis = 1)
+
+> df_concat
+
+> pd.merge (a,b)
+
+> df.shape
+
+> selectf_df = pd.DataFrame(df,columns=['like','share','Category','Type'])
+
+> selectf_df
+
+> pivot_table=pd.pivot_table(selectf_df,index=['Category','like',])
+
+> pivot_table
+
+> pivot_table.reset_index(inplace=True)
+
+> pivot_table

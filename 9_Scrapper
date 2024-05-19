@@ -1,0 +1,29 @@
+> pip install requests
+
+> pip install beautifulsoup4
+
+> import requests
+import bs4
+
+> rq1=requests.get('https://www.nike.com/in/t/downshifter-13-road-running-shoes-2Bm363/FD6476-101')
+rq1 
+
+> rq1.content
+
+> soup = bs4.BeautifulSoup(rq1.text)
+soup
+
+> rev = soup.findAll('div',{'class' : 'app-root'})
+for review in rev:
+    print(review.get_text()+”\n\n")
+
+> avg_ratings=soup.find('p',{'class':'d-sm-ib pl4-sm’}).get_text()
+print(avg_ratings)
+
+> cust_name=soup.findAll('p',{'class':'pl4-sm d-sm-ib text-color-secondary responsive-body-3-2'})
+for cname in cust_name:
+    print(cname.get_text())
+
+> cust_comment=soup.findAll('p',{'style':'word-wrap:break-word'})
+for ccomm in cust_comment:
+    print(ccomm.get_text())
